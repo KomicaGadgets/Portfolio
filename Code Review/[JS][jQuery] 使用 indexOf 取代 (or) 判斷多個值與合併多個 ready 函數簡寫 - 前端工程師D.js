@@ -5,25 +5,15 @@ window.onload = function () {
 		if (e.keyCode === 13 && e.target.nodeName === 'INPUT') {
 
 			//...
-
-			if (e.target.name == "controller_address" | e.target.name == "address" | e.target.name == "netmask" | e.target.name == "gateway" | e.target.name == "dns") {
-				if (e.target.value !== "") {
-					e.preventDefault();
-					var form = e.target.form;
-					var index = [].indexOf.call(form, e.target);
-					var len = form.elements.length;
-					if (len > index + 1) {
-						form.elements[index + 1].focus();
-					}
-				}
-			} else {
+			var IsNameExist = (['controller_address', 'address', 'netmask', 'gateway', 'dns'].indexOf(e.target.name) > -1);
+			if (!IsNameExist || (IsNameExist && e.target.value !== "")) {
 				e.preventDefault();
-				var form = e.target.form;
-				var index = [].indexOf.call(form, e.target);
-				var len = form.elements.length;
-				if (len > index + 1) {
-					form.elements[index + 1].focus();
-				}
+				var form = e.target.form,
+					index = [].indexOf.call(form, e.target),
+					len = form.elements.length,
+					plus_index = index + 1;
+				if (len > plus_index)
+					form.elements[plus_index].focus();
 			}
 		}
 	})
@@ -50,10 +40,6 @@ window.onload = function () {
 		$("#clear_confirm_buttom").on('click', function () {
 			$('#clear_confirm').modal('hide');
 		});
-	});
-
-
-	$(function () {
 		$('#save_confirm_buttom').on('click', function () {
 			$('#save_confirm').modal('hide');
 		});

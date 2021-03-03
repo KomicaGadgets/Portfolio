@@ -7,14 +7,14 @@ class License
 
 	public static function isExpired()
 	{
-		if (self::mode() == self::None || self::mode() == self::MockActive) {
+		if (in_array(self::mode(), [self::None, self::MockActive]))
 			return false;
-		} else if (self::mode() == self::MockExpire) {
+
+		if (self::mode() == self::MockExpire)
 			return true;
-		}
+
 		$expire = self::expirationDate();
-		$now = Carbon::Now();
-		return $now->diffInHours($expire, false) < 0;
+		return now()->diffInHours($expire, false) < 0;
 	}
 
 	//...

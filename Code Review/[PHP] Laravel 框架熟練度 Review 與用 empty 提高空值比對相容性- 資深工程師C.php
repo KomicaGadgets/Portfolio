@@ -7,42 +7,43 @@ class TestReportController extends Controller
 	 */
 	public function store(Request $request)
 	{
-		if (Auth::user()) {
-			if (isset($request['id']) && isset($request['type'])) {
+		$Response = [
+			[
+				'message' => 'invalid data, permission error.'
+			],
+			401
+		];
+
+		if (Auth::check()) {
+			$Response = [
+				[
+					'message' => 'invalid data, request data error.'
+				],
+				400
+			];
+
+			if ($request->has(['id', 'type'])) {
 
 				//...
 
-				$id = (int) $request['id'];
+				$id = (int) $request->id;
 				$cases = json_decode(app('App\Http\Controllers\TestProjectController')->genProjectCaseList($id, 1), true);
 
 				//...
 
-				if ($cases == null) {
-					return response()->json(
+				if (empty($cases)) {
+					$Response = [
 						[
 							'message' => 'invalid data, project not exist error.'
 						],
 						400
-					);
+					];
 				}
 
 				//...
-
-			} else {
-				return response()->json(
-					[
-						'message' => 'invalid data, request data error.'
-					],
-					400
-				);
 			}
-		} else {
-			return response()->json(
-				[
-					'message' => 'invalid data, permission error.'
-				],
-				401
-			);
 		}
+
+		return response()->json(...$Response);
 	}
 }
