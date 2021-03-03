@@ -1,0 +1,17 @@
+{
+	"autoload": {
+		"classmap": [
+			"Core/",
+			"Proxies/",
+			"HookMgr.php"
+		],
+		"psr-4": {
+			"PostStatusBroadcaster\\Core\\": "Core/",
+			"PostStatusBroadcaster\\Proxies\\": "Proxies/"
+		},
+		"files": []
+	},
+	"require": {
+		
+	}
+}
