@@ -1,0 +1,31 @@
+{
+	"require": {
+		"vlucas/phpdotenv": "^5.1",
+		"phpseclib/phpseclib": "~2.0",
+		"google/recaptcha": "^1.2",
+		"delight-im/cookie": "^3.4",
+		"nesbot/carbon": "^2.38",
+		"tightenco/collect": "^7.19",
+		"nicmart/string-template": "^0.1",
+		"eftec/bladeone": "^3.46",
+		"guzzlehttp/guzzle": "^7.0",
+		"vectorface/whip": "^0.3.2",
+		"monolog/monolog": "^2.1"
+	},
+	"autoload": {
+		"classmap": [
+			"Blueprint/",
+			"Core/",
+			"Prefab/",
+			"IndependentMod.php",
+			"Tsukuyomi.php"
+		],
+		"psr-4": {
+			"PostStatusBroadcaster\\Tsukuyomi\\": "framework/Tsukuyomi/"
+		},
+		"files": []
+	},
+	"require-dev": {
+		"symfony/var-dumper": "^5.1"
+	}
+}
