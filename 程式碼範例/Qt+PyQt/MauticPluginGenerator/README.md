@@ -1,5 +1,7 @@
 # Mautic 外掛產生器
 
+![Mautic 外掛產生器預覽](./MauticPluginGeneratorPreview.png)
+
 這是我為了方便開發新的 Mautic 外掛所開發的外掛產生器，這個產生器可以在做一點簡單設定後就立刻產生一個基礎 Mautic 外掛樣板並用於開發。
 
 由於 Mautic 採用 Symfony 5 這個 PHP 框架來開發，所以若要自行開發外掛並擴充 Mautic 這套開源 E-mail 行銷系統的話，那麼在開發時就必須要遵守 Symfony 5 的規則。
@@ -12,6 +14,6 @@
 
 在啟動這個程式後，它會出現一個圖形化介面，只要在介面裡的主輸入框填上新外掛的英文代稱，那麼它就會自動產生多種英數字樣變體。
 
-例如說，假設外掛叫做網址產生器，其英文代稱為 URL Generator，那麼只要輸入 URL Generator，它就會自動產生像 url_generator、url_gen、URLGenerator 等各種形式的英文代稱。
+例如說，假設外掛叫做網址產生器，其英文代稱為 URL Generator，那麼只要輸入 URL Generator，它就會自動產生像 url_generator、urlgenerator、url generator 等各種形式的英文代稱。
 
 隨後，這個程式就能讀取外掛的樣板程式碼並將符合規則的英文代稱填入至對應的程式碼區塊裡，如此一來就不會發生才剛要開發新的外掛就跳出多個錯誤，連最基本的 Hello World 程式都無法執行的窘境。
