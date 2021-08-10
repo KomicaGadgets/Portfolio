@@ -1,0 +1,9 @@
+#app/ping/ping.sh
+#app/bt/bt.sh
+#app/vlc/vlc_server.sh
+#app/vlc/vlc_client.sh
+#app/ftp/ftp_server.py
+#app/ftp/ftp_client.py
+#app/samba/samba.py
+#app/bst/bst.py
+#app/plex/plex.py

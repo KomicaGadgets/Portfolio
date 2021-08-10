@@ -1,0 +1,7 @@
+{
+	"pc_name":"PC1",
+	"pc_nic":"enp0s20f3",
+	"pc_nic_mode":"DHCP \/ Fixed",
+	"pc_nic_ip":"192.168.0.123",
+	...
+}
