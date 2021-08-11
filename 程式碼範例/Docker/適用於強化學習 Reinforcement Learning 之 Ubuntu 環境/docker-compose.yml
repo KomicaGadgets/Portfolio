@@ -1,0 +1,25 @@
+version: '3'
+
+networks:
+  frontend:
+    driver: ${NETWORKS_DRIVER}
+  backend:
+    driver: ${NETWORKS_DRIVER}
+
+volumes:
+  mysql:
+    driver: ${VOLUMES_DRIVER}
+
+services:
+
+### Reinforcement Learning Environment ##################################
+    rl:
+      build:
+        context: ./
+      volumes:
+        - ${APP_CODE_PATH_HOST}:${APP_CODE_PATH_CONTAINER}${APP_CODE_CONTAINER_FLAG}
+      tty: true
+      networks:
+        - frontend
+        - backend
+
