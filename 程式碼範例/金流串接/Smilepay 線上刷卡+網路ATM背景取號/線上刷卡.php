@@ -92,8 +92,8 @@ class Checkout extends Controller
 					$Data_id = 'R' . $UsrData->get('invoice_id');	// Recurring
 
 				$PaymentParam = [
-					'Rvg2c'	=>	1,
-					'Dcvc'	=>	2963,
+					'Rvg2c'	=>	186,
+					'Dcvc'	=>	9999,
 					'Pay_zg'	=>	$Pay_zg,
 					'Od_sob'	=>	$FullProductName,
 					'Data_id'	=>	$Data_id,
